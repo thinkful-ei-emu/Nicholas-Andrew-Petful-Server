@@ -6,8 +6,8 @@
     "env": {
         // "browser": true,
         "es6": true,
-        "node": true
-        // "mocha": true,
+        "node": true,
+        "mocha": true
         // "mongo": true
     },
     // our configuration extends the recommended base configuration

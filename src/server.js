@@ -1,8 +1,19 @@
 const express = require('express');
 const cors = require('cors');
 
+const petsRouter = require('./pets/petsRouter');
+
 const app = express();
 app.use(cors());
+
+
+app.use('/api/pets', petsRouter);
+
+
+app.get('/', (req, res) => {
+  res.send('Hello, world!\n');
+});
+
 
 // Catch-all 404
 app.use(function (req, res, next) {
@@ -21,6 +32,7 @@ app.use(function (err, req, res, next) {
   });
 });
 
-app.listen(8080,()=>{
+
+app.listen(8080, () => {
   console.log('Serving on 8080');
 });

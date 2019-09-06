@@ -7,13 +7,19 @@
   "license": "UNLICENSED",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "test": "mocha --require test/setup.js",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "faker": "^4.1.0",
     "nodemon": "^1.18.10"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "supertest": "^4.0.2"
   }
 }
