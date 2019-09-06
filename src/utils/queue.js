@@ -12,6 +12,10 @@ class Queue {
     this.back = null;
   }
 
+  peek() {
+    return this.front.value;
+  }
+
   enqueue(value) {
     if (!this.front) {
       this.front = new _Node(value);
@@ -21,6 +25,18 @@ class Queue {
       this.back.next = new _Node(value, this.back);
       this.back = this.back.next;
     }
+  }
+
+  toArray() {
+    let node = this.front;
+    const arr = [];
+
+    while (node !== null) {
+      arr.push(node.value);
+      node = node.next;
+    }
+
+    return arr;
   }
 
   dequeue() {
