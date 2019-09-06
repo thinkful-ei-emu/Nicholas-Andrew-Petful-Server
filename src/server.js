@@ -60,11 +60,11 @@ const dogsData = [
 
 for (let i = 0; i < catsData.length; i++) {
   const cat = catsData[i];
-  tickets.enqueue(cat);
+  cats.enqueue(cat);
 }
 for (let i = 0; i < dogsData.length; i++) {
   const dog = dogsData[i];
-  tickets.enqueue(dog);
+  dogs.enqueue(dog);
 }
 for (let i = 0; i < ticketData.length; i++) {
   const ticket = ticketData[i];
