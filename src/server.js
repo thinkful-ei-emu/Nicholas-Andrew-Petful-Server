@@ -1,6 +1,7 @@
 const app = require('./app');
 
 const Queue = require('./utils/queue');
+const Ticket = require('./utils/ticket');
 
 const cats = new Queue();
 const dogs = new Queue();
