@@ -4,4 +4,6 @@ Pet stuff
 
 ## How to get pets
 
-make request to /api/pets/cats for cats and /api/pets/dogs for dogs
+/api/pets/cats for cats <br />
+/api/pets/dogs for dogs <br />
+/api/tickets for list of current adopters
