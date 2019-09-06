@@ -1,9 +1,6 @@
 const express = require('express');
 
 const petsRouter = express.Router();
-const jsonBodyParser = express.json();
-
-// dummy db 
 
 const notFoundError = {
   error: 'not found'

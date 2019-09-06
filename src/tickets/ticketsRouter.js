@@ -1,7 +1,6 @@
 const express = require('express');
 
 const Queue = require('../utils/queue');
-const Ticket = require('../utils/ticket');
 
 const ticketsRouter = express.Router();
 const jsonBodyParser = express.json();

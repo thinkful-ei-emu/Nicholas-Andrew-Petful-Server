@@ -47,12 +47,9 @@ describe('Ticket Endpoint', () => {
       });
 
       it('should return a queue of tickets', async () => {
-        // console.log(tickets.toArray());
         const res = await supertest(app)
           .get('/api/tickets')
           .expect(200);
-
-        // console.log(res.body);
 
         expect(res.body).to.eql(tickets.toArray());
       });

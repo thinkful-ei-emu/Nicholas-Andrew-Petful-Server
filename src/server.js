@@ -1,4 +1,5 @@
 const app = require('./app');
+const uuidv4 = require('uuid/v4');
 
 const Queue = require('./utils/queue');
 const Ticket = require('./utils/ticket');
@@ -59,11 +60,22 @@ const dogsData = [
 ];
 
 for (let i = 0; i < catsData.length; i++) {
-  const cat = catsData[i];
+  const cat = {
+    ...catsData[i]
+  };
+
+  if (!cat.id) cat.id = uuidv4();
+
   cats.enqueue(cat);
 }
+
 for (let i = 0; i < dogsData.length; i++) {
-  const dog = dogsData[i];
+  const dog = {
+    ...dogsData[i]
+  };
+
+  if (!dog.id) dog.id = uuidv4();
+
   dogs.enqueue(dog);
 }
 for (let i = 0; i < ticketData.length; i++) {
