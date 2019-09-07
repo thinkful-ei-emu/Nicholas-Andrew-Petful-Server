@@ -12,8 +12,23 @@ adoptRouter
     const pets = req.app.get(display);
     console.log(pets.peek());
 
-    if (tickets.peek().id === ticketId && pets.peek().id === petId)
-      return res.json(pets.dequeue());
+    if (tickets.peek().id === ticketId && pets.peek().id === petId) {
+      const adopted = {
+        pet: pets.dequeue(),
+        owner: tickets.dequeue()
+      };
+
+      /**
+       * reinsert pet and owner into queues to simulate more pets and owners joining the line
+       */
+      pets.enqueue(adopted.pet);
+      tickets.enqueue(adopted.owner);
+
+      /**
+       * return pet and owner pair
+       */
+      return res.json(adopted);
+    }
     else return res.status(403).json({ error: 'not first in line' });
   });
 
