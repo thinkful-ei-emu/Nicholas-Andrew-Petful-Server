@@ -5,7 +5,7 @@ const jsonBodyParser = express.json();
 
 adoptRouter
   .route('/')
-  .get(jsonBodyParser, (req, res) => {
+  .get(jsonBodyParser, (req, res) => {2;
     const { userId, petId, petType } = req.body;
 
     const tickets = req.app.get('tickets');
