@@ -15,3 +15,5 @@ adoptRouter
       return res.json(pets.dequeue());
     else return res.status(403).json({ error: 'not first in line' });
   });
+
+module.exports = adoptRouter;
