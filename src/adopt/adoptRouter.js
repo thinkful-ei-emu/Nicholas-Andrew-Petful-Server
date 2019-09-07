@@ -18,6 +18,8 @@ adoptRouter
         owner: tickets.dequeue()
       };
 
+      
+
       /**
        * reinsert pet and owner into queues to simulate more pets and owners joining the line
        */

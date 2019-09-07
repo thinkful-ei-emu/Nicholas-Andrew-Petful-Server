@@ -46,7 +46,7 @@ class Queue {
       this.front = this.front.next;
       this.front.prev = null;
 
-      return dq;
+      return dq.value;
     }
   }
 }
