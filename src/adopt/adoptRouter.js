@@ -7,9 +7,10 @@ adoptRouter
   .route('/')
   .post(jsonBodyParser, (req, res) => {
     const { ticketId, petId, display } = req.body;  
-
+    console.log(display);
     const tickets = req.app.get('tickets');
-    const pets = req.app.get.get(display);
+    const pets = req.app.get(display);
+    console.log(pets.peek());
 
     if (tickets.peek().id === ticketId && pets.peek().id === petId)
       return res.json(pets.dequeue());
