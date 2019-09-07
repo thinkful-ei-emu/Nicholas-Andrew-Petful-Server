@@ -3,6 +3,7 @@ const cors = require('cors');
 
 const petsRouter = require('./pets/petsRouter');
 const ticketsRouter = require('./tickets/ticketsRouter');
+const adoptRouter = require('./adopt/adoptRouter');
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.use(cors());
 
 app.use('/api/pets', petsRouter);
 app.use('/api/tickets', ticketsRouter);
-
+app.use('/api/adopt', adoptRouter);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
