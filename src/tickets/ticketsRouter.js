@@ -16,7 +16,7 @@ ticketsRouter
   })
   .post(jsonBodyParser, (req, res) => {
     const { username, email } = req.body;
-    const newTicket = new _Ticket(username, email);
+    const newTicket = new Ticket(username, email);
     tickets.enqueue(newTicket);
 
     res.status(201).json(newTicket);

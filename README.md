@@ -6,4 +6,5 @@ Pet stuff
 
 /api/pets/cats for cats <br />
 /api/pets/dogs for dogs <br />
-/api/tickets for list of current adopters
+/api/tickets for list of current adopters <br />
+/api/adopt to adopt - send the pet and user id as part of the body
