@@ -10,7 +10,9 @@ const app = express();
 
 app.use(cors());
 
-
+/**
+ * set app routes
+ */
 app.use('/api/pets', petsRouter);
 app.use('/api/tickets', ticketsRouter);
 app.use('/api/adopt', adoptRouter);
@@ -18,7 +20,6 @@ app.use('/api/adopt', adoptRouter);
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
-
 
 // Catch-all 404
 app.use(function (req, res, next) {

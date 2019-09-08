@@ -1,3 +1,6 @@
+/**
+ * basic node class for use in linked list
+ */
 class _Node {
   constructor(value, prev = null, next = null) {
     this.value = value;
@@ -6,16 +9,26 @@ class _Node {
   }
 }
 
+/**
+ * a basic queue class that uses a linked list
+ */
 class Queue {
   constructor() {
     this.front = null;
     this.back = null;
   }
 
+  /**
+   * returns the front value of the queue
+   */
   peek() {
     return this.front.value;
   }
 
+  /**
+   * adds the input value to the end of the queue
+   * @param {*} value 
+   */
   enqueue(value) {
     if (!this.front) {
       this.front = new _Node(value);
@@ -27,6 +40,9 @@ class Queue {
     }
   }
 
+  /**
+   * returns an array of the items of the queue
+   */
   toArray() {
     let node = this.front;
     const arr = [];
@@ -39,6 +55,9 @@ class Queue {
     return arr;
   }
 
+  /**
+   * removes and returns the front element of the queue
+   */
   dequeue() {
     if (!this.front) return null;
     else {

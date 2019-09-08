@@ -2,12 +2,11 @@ const express = require('express');
 
 const petsRouter = express.Router();
 
-const notFoundError = {
-  error: 'not found'
-};
-
 petsRouter
   .route('/cats')
+  /**
+   * responds with an array of the cats Queue
+   */
   .get((req, res, next) => {
     const cats = req.app.get('cats');
 
@@ -16,6 +15,9 @@ petsRouter
 
 petsRouter
   .route('/dogs')
+  /**
+   * responds with an array of the dogs Queue
+   */
   .get((req, res, next) => {
     const dogs = req.app.get('dogs');
 

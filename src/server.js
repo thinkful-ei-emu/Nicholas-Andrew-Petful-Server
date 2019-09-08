@@ -3,6 +3,7 @@ const uuidv4 = require('uuid/v4');
 
 const Queue = require('./utils/queue');
 const Ticket = require('./utils/ticket');
+const config = require('./config');
 
 const cats = new Queue();
 const dogs = new Queue();
@@ -95,6 +96,10 @@ const dogsData = [
   },
 ];
 
+
+/**
+ * populate server with dummy data
+ */
 for (let i = 0; i < catsData.length; i++) {
   const cat = {
     ...catsData[i]
@@ -119,10 +124,13 @@ for (let i = 0; i < ticketData.length; i++) {
   tickets.enqueue(new Ticket(ticket.username, ticket.email, i));
 }
 
+/**
+ * set Queues as global vars
+ */
 app.set('cats', cats);
 app.set('dogs', dogs);
 app.set('tickets', tickets);
 
-app.listen(8080, () => {
-  console.log('Serving on 8080');
+app.listen(config.PORT, () => {
+  console.log(`Serving on ${config.PORT}`);
 });
