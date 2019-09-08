@@ -10,6 +10,13 @@ GET /api/tickets for list of current adopters <br />
 POST /api/tickets with body { username, email } to add a ticket to the queue <br />
 POST /api/adopt to adopt with body { ticketId, petId, petType }. petType should be a string either 'cats' or 'dogs'
 
+## Technologies
+<ul>
+<li>node
+<li>npm
+<li>express
+</ul>
+
 ## Repos
 https://github.com/thinkful-ei-emu/Nicholas-Andrew-Petful-Server <br />
 https://github.com/thinkful-ei-emu/petful-client-nick-andrew
