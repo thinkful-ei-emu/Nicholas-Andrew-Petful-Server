@@ -7,10 +7,10 @@ adoptRouter
   .route('/')
   .post(jsonBodyParser, (req, res) => {
     const { ticketId, petId, display } = req.body;  
-    console.log(display);
     const tickets = req.app.get('tickets');
     const pets = req.app.get(display);
-    console.log(pets.peek());
+    console.log('pet ids',pets.peek().id, petId);
+    console.log('ticket ids', tickets.peek().id, ticketId);
 
     if (tickets.peek().id === ticketId && pets.peek().id === petId) {
       const adopted = {
